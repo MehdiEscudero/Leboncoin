@@ -4,9 +4,13 @@ const Container = ({ children }) => {
   return (
     <div
       style={{
-        height: "100%",
+        height: "auto",
         width: "100%",
         backgroundColor: "#fafafa",
+        overflow: "auto",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
       }}
     >
       {children}

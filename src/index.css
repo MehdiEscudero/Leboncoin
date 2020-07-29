@@ -66,4 +66,12 @@ html body #root {
   height: 170px;
   border-radius: 8px;
   background-color: white;
+  display: flex;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+.text-card {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
 }

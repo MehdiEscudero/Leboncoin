@@ -8,9 +8,18 @@ const Login = () => {
         flexDirection: "column",
         width: "50%",
         textAlign: "center",
+        alignContent: "space-between",
       }}
     >
-      <h3>Connection</h3>
+      <h3
+        style={{
+          borderBottom: "solid #f56b2b",
+          paddingBottom: 5,
+          borderWidth: 1.6,
+        }}
+      >
+        Connection
+      </h3>
       <div
         style={{
           display: "flex",
@@ -22,9 +31,24 @@ const Login = () => {
         <input type="text" />
         <span>Mot de passe</span>
         <input type="text" />
-        <button>Se connecter</button>
+        <button style={{ marginTop: 20 }} className="bluebutton">
+          Se connecter
+        </button>
       </div>
-      <button>Créer un compte</button>
+
+      <div
+        style={{
+          marginTop: "20px",
+          display: "flex",
+          flexDirection: "column",
+          textAlign: "center",
+        }}
+      >
+        <span>Vous n'avez pas de compte ?</span>
+        <button style={{ marginTop: 20 }} className="transpbutton">
+          Créer un compte
+        </button>
+      </div>
     </div>
   );
 };

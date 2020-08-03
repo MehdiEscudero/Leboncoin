@@ -6,7 +6,7 @@ const Wrapper = ({ children }) => {
       style={{
         height: "auto",
         width: "100%",
-        backgroundColor: "#fafafa",
+        backgroundColor: "#f5f2f2",
         overflow: "auto",
         display: "flex",
         flexDirection: "column",

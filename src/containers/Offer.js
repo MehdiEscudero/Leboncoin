@@ -7,7 +7,6 @@ import { Link, useParams } from "react-router-dom";
 
 const Offer = () => {
   const { id } = useParams();
-  console.log(id);
 
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -29,30 +28,69 @@ const Offer = () => {
 
   return (
     <>
-      {/* {isLoading ? (
+      {isLoading ? (
         <p style={{ backgroundColor: "red" }}>En cours de chargement</p>
       ) : (
-        <Wrapper style={{ display: "flex", justifyContent: "center" }}>
-          {data &&
-            data.offer.map((value) => {
-              return (
-                <Link
-                  to="/offer"
-                  style={{ textDecoration: "none", color: "black" }}
+        <Wrapper
+          style={{ display: "flex", marginTop: 10, justifyContent: "center" }}
+        >
+          <div style={{ display: "flex" }}>
+            <div
+              style={{
+                width: "587px",
+                height: "310",
+                display: "flex",
+                flexDirection: "column",
+                backgroundColor: "white",
+                boxShadow: "0px 1px 4px -1px rgba(0,0,0,0.75)",
+                marginRight: "20px",
+              }}
+            >
+              <img
+                height="100%"
+                width="100%"
+                src={data.picture.url}
+                alt="photo"
+              />
+              <h4 style={{ marginTop: 15, marginLeft: 10 }}>{data.title} </h4>
+              <span style={{ marginTop: 5, color: "#f56b2b", marginLeft: 10 }}>
+                {data.price} €
+              </span>
+              <span style={{ marginTop: 30, marginBottom: 10, marginLeft: 10 }}>
+                {new Date(data.created).toLocaleDateString()}
+              </span>
+              <div style={{ marginLeft: 10, marginBottom: 20 }}>
+                <h4>Description</h4>
+                <p
+                  style={{
+                    maxWidth: "100%",
+                    textEmphasis: "elipsis",
+                  }}
                 >
-                  <Card
-                    key={value.id}
-                    img={value.picture.url}
-                    title={value.title}
-                    price={value.price}
-                    date={new Date(value.created).toLocaleDateString()}
-                  />
-                </Link>
-              );
-            })}
+                  {data.description}
+                </p>
+              </div>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                width: 150,
+                marginTop: 10,
+                textAlign: "center",
+                alignItems: "center",
+                backgroundColor: "white",
+                padding: 20,
+                height: 100,
+              }}
+            >
+              <h5>{data.creator.account.username}</h5>
+
+              <button className="orangebutton">acheter</button>
+            </div>
+          </div>
         </Wrapper>
-      )} */}
-      <span>Hello Brice</span>
+      )}
     </>
   );
 };

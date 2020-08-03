@@ -28,6 +28,29 @@ html body #root {
   cursor: pointer;
 }
 
+.bluebutton {
+  background-color: #4283d7;
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+  font-family: unset;
+  font-weight: bold;
+  border-color: transparent;
+  cursor: pointer;
+}
+
+.transpbutton {
+  background-color: transparent;
+  border-radius: 5px;
+  color: #4283d7;
+  padding: 10px;
+  font-family: unset;
+  font-weight: bold;
+  border-color: transparent;
+  cursor: pointer;
+  border-color: #4283d7;
+}
+
 .whitebutton {
   background-color: white;
   color: black;

@@ -17,6 +17,10 @@ html body #root {
   height: 100vh;
 }
 
+span {
+  font-weight: bold;
+}
+
 .orangebutton {
   background-color: #f56b2b;
   border-radius: 5px;

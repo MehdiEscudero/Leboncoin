@@ -7,8 +7,10 @@ import Offer from "./containers/Offer";
 
 import Offers from "./containers/Offers";
 import Login from "./components/Login";
-import Wrapper from "./components/Wrapper";
 import Cookies from "js-cookie";
+import Signup from "./components/Signup";
+import Payment from "./components/Payment";
+import Publish from "./components/Publish";
 
 const App = () => {
   const [isLogged, setIsLogged] = useState(false);
@@ -38,10 +40,17 @@ const App = () => {
         <Route path="/offer/:id">
           <Offer />
         </Route>
+        <Route path="/payment/:id">
+          <Payment />
+        </Route>
+        <Route path="/publish">
+          <Publish />
+        </Route>
         <Route path="/login">
-          <Wrapper>
-            <Login login={() => setIsLogged(true)} />
-          </Wrapper>
+          <Login login={() => setIsLogged(true)} />
+        </Route>
+        <Route path="/signup">
+          <Signup login={() => setIsLogged(true)} />
         </Route>
         <Route path="/">
           <Offers />

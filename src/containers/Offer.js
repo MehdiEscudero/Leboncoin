@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Wrapper from "../components/Wrapper";
 
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 const Offer = () => {
   const { id } = useParams();
@@ -82,8 +82,9 @@ const Offer = () => {
               }}
             >
               <h5>{data.creator.account.username}</h5>
-
-              <button className="orangebutton">acheter</button>
+              <Link to={"/payment/" + data._id}>
+                <button className="orangebutton">acheter</button>
+              </Link>
             </div>
           </div>
         </Wrapper>

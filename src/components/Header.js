@@ -17,10 +17,12 @@ const Header = ({ isLogged, logout }) => {
         </Link>
 
         <div className="header-btns">
-          <button className="orangebutton">
-            <FontAwesomeIcon icon="plus" />
-            <span style={{ marginLeft: 8 }}>Déposer une annonce</span>
-          </button>
+          <Link to="/publish" style={{ margin: "auto" }}>
+            <button className="orangebutton">
+              <FontAwesomeIcon icon="plus" />
+              <span style={{ marginLeft: 8 }}>Déposer une annonce</span>
+            </button>
+          </Link>
           <button className="whitebutton">
             <FontAwesomeIcon icon="search" />
             <input

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import Cookies from "js-cookie";
+import Wrapper from "./Wrapper";
 
 const Login = ({ login }) => {
   const [email, setEmail] = useState("");
@@ -33,58 +34,69 @@ const Login = ({ login }) => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        width: "50%",
-        textAlign: "center",
-        alignContent: "space-between",
-      }}
-    >
-      <h3
-        style={{
-          borderBottom: "solid #f56b2b",
-          paddingBottom: 5,
-          borderWidth: 1.6,
-        }}
-      >
-        Connection
-      </h3>
-      <div
+    <Wrapper>
+      <form
+        onSubmit={handleSubmit}
         style={{
           display: "flex",
           flexDirection: "column",
+          width: "50%",
           textAlign: "center",
+          alignContent: "space-between",
         }}
       >
-        <span>Adresse email</span>
-        <input onChange={(event) => setEmail(event.target.value)} type="text" />
-        <span>Mot de passe</span>
-        <input
-          onChange={(event) => setPassword(event.target.value)}
-          type="password"
-        />
-        <button type="submit" style={{ marginTop: 20 }} className="bluebutton">
-          Se connecter
-        </button>
-      </div>
+        <h3
+          style={{
+            borderBottom: "solid #f56b2b",
+            paddingBottom: 5,
+            borderWidth: 1.6,
+          }}
+        >
+          Connection
+        </h3>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            textAlign: "center",
+          }}
+        >
+          <span>Adresse email</span>
+          <input
+            onChange={(event) => setEmail(event.target.value)}
+            type="text"
+          />
+          <span>Mot de passe</span>
+          <input
+            onChange={(event) => setPassword(event.target.value)}
+            type="password"
+          />
+          <button
+            type="submit"
+            style={{ marginTop: 20 }}
+            className="bluebutton"
+          >
+            Se connecter
+          </button>
+        </div>
 
-      <div
-        style={{
-          marginTop: "20px",
-          display: "flex",
-          flexDirection: "column",
-          textAlign: "center",
-        }}
-      >
-        <span>Vous n'avez pas de compte ?</span>
-        <button style={{ marginTop: 20 }} className="transpbutton">
-          Créer un compte
-        </button>
-      </div>
-    </form>
+        <div
+          style={{
+            marginTop: "20px",
+            display: "flex",
+            flexDirection: "column",
+            textAlign: "center",
+          }}
+        >
+          <span>Vous n'avez pas de compte ?</span>
+          <Link to="/signup">
+            <button style={{ marginTop: 20 }} className="transpbutton">
+              Créer un compte
+            </button>
+          </Link>
+        </div>
+      </form>
+    </Wrapper>
   );
 };
 

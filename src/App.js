@@ -6,8 +6,10 @@ import Header from "./components/Header";
 import Offer from "./containers/Offer";
 
 import Offers from "./containers/Offers";
+import Login from "./components/Login";
+import Wrapper from "./components/Wrapper";
 
-function App() {
+const App = () => {
   library.add(faPlus, faSearch, faUser);
   return (
     <Router>
@@ -19,9 +21,17 @@ function App() {
         <Route path="/offer/:id">
           <Offer />
         </Route>
+        <Route path="/login">
+          <Wrapper>
+            <Login />
+          </Wrapper>
+        </Route>
+        <Route path="/">
+          <Offers />
+        </Route>
       </Switch>
     </Router>
   );
-}
+};
 
 export default App;

@@ -5,8 +5,6 @@ import axios from "axios";
 import Card from "../components/Card";
 import { Link } from "react-router-dom";
 
-console.log("coucou");
-
 const Offers = () => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);

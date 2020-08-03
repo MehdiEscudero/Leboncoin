@@ -1,12 +1,22 @@
 import React from "react";
 import logo from "../asset/logo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <div className="header">
       <div className="header-left">
-        <img alt="logo" className="logo" src={logo} alt="logo" />
+        <Link to="/">
+          <img
+            style={{ cursor: "pointer" }}
+            alt="logo"
+            className="logo"
+            src={logo}
+            alt="logo"
+          />
+        </Link>
+
         <div className="header-btns">
           <button className="orangebutton">
             <FontAwesomeIcon icon="plus" />
@@ -21,11 +31,13 @@ const Header = () => {
           </button>
         </div>
       </div>
-      <button className="whitebutton">
-        <FontAwesomeIcon icon="user" />
-        <br />
-        <span style={{ marginLeft: 8 }}>Mon compte</span>
-      </button>
+      <Link to="/login">
+        <button className="whitebutton">
+          <FontAwesomeIcon icon="user" />
+          <br />
+          <span style={{ marginLeft: 8 }}>Mon compte</span>
+        </button>
+      </Link>
     </div>
   );
 };

@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import Wrapper from "../components/Wrapper";
 
 import axios from "axios";
-import Card from "../components/Card";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const Offer = () => {
   const { id } = useParams();
@@ -17,8 +16,6 @@ const Offer = () => {
     );
 
     setData(response.data);
-    console.log(response.data);
-
     setIsLoading(false);
   };
 
@@ -50,7 +47,7 @@ const Offer = () => {
                 height="100%"
                 width="100%"
                 src={data.picture.url}
-                alt="photo"
+                alt="article"
               />
               <h4 style={{ marginTop: 15, marginLeft: 10 }}>{data.title} </h4>
               <span style={{ marginTop: 5, color: "#f56b2b", marginLeft: 10 }}>

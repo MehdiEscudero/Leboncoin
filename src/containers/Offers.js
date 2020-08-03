@@ -15,8 +15,6 @@ const Offers = () => {
     );
 
     setData(response.data);
-    console.log(response.data);
-
     setIsLoading(false);
   };
 
@@ -32,14 +30,14 @@ const Offers = () => {
         <Wrapper style={{ display: "flex", justifyContent: "center" }}>
           {data &&
             data.offers.map((value) => {
-              console.log(value);
               return (
                 <Link
+                  key={"link-" + value._id}
                   to={"/offer/" + value._id}
                   style={{ textDecoration: "none", color: "black" }}
                 >
                   <Card
-                    key={value.id}
+                    key={"product-" + value._id}
                     img={value.picture.url}
                     title={value.title}
                     price={value.price}

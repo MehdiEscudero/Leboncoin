@@ -3,7 +3,7 @@ import logo from "../asset/logo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ isLogged, logout }) => {
   return (
     <div className="header">
       <div className="header-left">
@@ -13,7 +13,6 @@ const Header = () => {
             alt="logo"
             className="logo"
             src={logo}
-            alt="logo"
           />
         </Link>
 
@@ -31,13 +30,26 @@ const Header = () => {
           </button>
         </div>
       </div>
-      <Link to="/login">
-        <button className="whitebutton">
+      {!isLogged ? (
+        <Link to="/login">
+          <button className="whitebutton">
+            <FontAwesomeIcon icon="user" />
+            <br />
+            <span style={{ marginLeft: 8 }}>Mon compte</span>
+          </button>
+        </Link>
+      ) : (
+        <button
+          onClick={() => {
+            logout();
+          }}
+          className="whitebutton"
+        >
           <FontAwesomeIcon icon="user" />
           <br />
-          <span style={{ marginLeft: 8 }}>Mon compte</span>
+          <span style={{ marginLeft: 8 }}>Deconnection</span>
         </button>
-      </Link>
+      )}
     </div>
   );
 };

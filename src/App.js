@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faPlus, faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -8,12 +8,29 @@ import Offer from "./containers/Offer";
 import Offers from "./containers/Offers";
 import Login from "./components/Login";
 import Wrapper from "./components/Wrapper";
+import Cookies from "js-cookie";
 
 const App = () => {
+  const [isLogged, setIsLogged] = useState(false);
+
+  useEffect(() => {
+    const token = Cookies.get("token");
+    if (token) {
+      setIsLogged(true);
+    }
+  });
+
   library.add(faPlus, faSearch, faUser);
+
   return (
     <Router>
-      <Header />
+      <Header
+        isLogged={isLogged}
+        logout={() => {
+          setIsLogged(false);
+          Cookies.remove("token");
+        }}
+      />
       <Switch>
         <Route path="/offers">
           <Offers />
@@ -23,7 +40,7 @@ const App = () => {
         </Route>
         <Route path="/login">
           <Wrapper>
-            <Login />
+            <Login login={() => setIsLogged(true)} />
           </Wrapper>
         </Route>
         <Route path="/">

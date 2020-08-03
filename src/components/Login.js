@@ -1,8 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
+import { useHistory } from "react-router-dom";
+import Cookies from "js-cookie";
 
-const Login = () => {
+const Login = ({ login }) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const history = useHistory();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!email || !password) {
+      alert("Vous devez saisir des informations de connection valide");
+    } else {
+      try {
+        const response = await axios.post(
+          "https://leboncoin-api.herokuapp.com/user/log_in",
+          {
+            email: email,
+            password: password,
+          }
+        );
+        if (response.data.token) {
+          Cookies.set("token", response.data.token);
+          login();
+          history.push("/");
+        }
+      } catch (error) {
+        console.log(error.message);
+      }
+    }
+  };
+
   return (
-    <div
+    <form
+      onSubmit={handleSubmit}
       style={{
         display: "flex",
         flexDirection: "column",
@@ -28,10 +60,13 @@ const Login = () => {
         }}
       >
         <span>Adresse email</span>
-        <input type="text" />
+        <input onChange={(event) => setEmail(event.target.value)} type="text" />
         <span>Mot de passe</span>
-        <input type="text" />
-        <button style={{ marginTop: 20 }} className="bluebutton">
+        <input
+          onChange={(event) => setPassword(event.target.value)}
+          type="password"
+        />
+        <button type="submit" style={{ marginTop: 20 }} className="bluebutton">
           Se connecter
         </button>
       </div>
@@ -49,7 +84,7 @@ const Login = () => {
           Créer un compte
         </button>
       </div>
-    </div>
+    </form>
   );
 };
 

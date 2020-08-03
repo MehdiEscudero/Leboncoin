@@ -1,6 +1,6 @@
 import React from "react";
 
-const Container = ({ children }) => {
+const Wrapper = ({ children }) => {
   return (
     <div
       style={{
@@ -18,4 +18,4 @@ const Container = ({ children }) => {
   );
 };
 
-export default Container;
+export default Wrapper;

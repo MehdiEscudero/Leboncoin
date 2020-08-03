@@ -1,13 +1,13 @@
 import React from "react";
-import logo from "../logo/logo.svg";
+import logo from "../asset/logo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const NavBar = () => {
+const Header = () => {
   return (
-    <div className="navbar">
-      <div className="navbar-left">
+    <div className="header">
+      <div className="header-left">
         <img className="logo" src={logo} alt="logo" />
-        <div className="navbar-btns">
+        <div className="header-btns">
           <button className="orangebutton">
             <FontAwesomeIcon icon="plus" />
             <span style={{ marginLeft: 8 }}>Déposer une annonce</span>
@@ -30,4 +30,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default Header;

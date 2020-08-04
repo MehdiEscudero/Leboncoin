@@ -3,6 +3,8 @@ import Cookies from "js-cookie";
 import axios from "axios";
 import { useHistory, Redirect } from "react-router-dom";
 import Wrapper from "./Wrapper";
+// import React from "react";
+// import Dropzone from "react-dropzone";
 
 const Publish = () => {
   const [title, setTitle] = useState("");

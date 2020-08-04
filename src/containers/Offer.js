@@ -72,18 +72,27 @@ const Offer = () => {
               style={{
                 display: "flex",
                 flexDirection: "column",
-                width: 150,
+                width: 250,
                 marginTop: 10,
                 textAlign: "center",
                 alignItems: "center",
                 backgroundColor: "white",
                 padding: 20,
-                height: 100,
+                height: 150,
               }}
             >
               <h5>{data.creator.account.username}</h5>
-              <Link to={"/payment/" + data._id}>
-                <button className="orangebutton">acheter</button>
+              <Link
+                to={"/payment/" + data._id}
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                }}
+              >
+                <button className="orangebutton" style={{ marginBottom: 10 }}>
+                  Acheter
+                </button>
+                <button className="bluebutton">Envoyer un message</button>
               </Link>
             </div>
           </div>

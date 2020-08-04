@@ -103,6 +103,9 @@ span {
   margin-left: 15px;
 }
 
-/* .footer {
-
-} */
+.footer {
+  background-color: #474747;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}

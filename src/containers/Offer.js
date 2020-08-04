@@ -87,6 +87,7 @@ const Offer = () => {
                 style={{
                   display: "flex",
                   flexDirection: "column",
+                  textDecoration: "none",
                 }}
               >
                 <button className="orangebutton" style={{ marginBottom: 10 }}>

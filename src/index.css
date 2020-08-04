@@ -108,4 +108,6 @@ span {
   padding: 20px;
   text-align: center;
   color: white;
+  position: sticky;
+  bottom: 0;
 }

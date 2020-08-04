@@ -5,7 +5,7 @@ const Footer = () => {
     <div className="footer">
       <span style={{ fontWeight: "normal" }}>
         Réplique de leboncoin - Codée par Mehdi Escudero -{" "}
-        <a style={{ color: "white" }} href="www.lereacteur.io">
+        <a style={{ color: "white" }} href="https://lereacteur.io">
           LeReacteur.io
         </a>
       </span>

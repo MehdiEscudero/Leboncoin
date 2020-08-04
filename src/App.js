@@ -14,6 +14,7 @@ import Publish from "./components/Publish";
 
 const App = () => {
   const [isLogged, setIsLogged] = useState(false);
+  const [search, setSearch] = useState(null);
 
   useEffect(() => {
     const token = Cookies.get("token");
@@ -27,6 +28,9 @@ const App = () => {
   return (
     <Router>
       <Header
+        setSearch={(value) => {
+          setSearch(value);
+        }}
         isLogged={isLogged}
         logout={() => {
           setIsLogged(false);
@@ -35,7 +39,7 @@ const App = () => {
       />
       <Switch>
         <Route path="/offers">
-          <Offers />
+          <Offers searchOffer={search} />
         </Route>
         <Route path="/offer/:id">
           <Offer />
@@ -53,7 +57,7 @@ const App = () => {
           <Signup login={() => setIsLogged(true)} />
         </Route>
         <Route path="/">
-          <Offers />
+          <Offers searchOffer={search} />
         </Route>
       </Switch>
     </Router>

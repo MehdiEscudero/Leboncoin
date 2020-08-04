@@ -23,6 +23,11 @@ const Login = ({ login }) => {
           }
         );
         if (response.data.token) {
+          console.log(response.data);
+          Cookies.set("user", {
+            username: response.data.username,
+            id: response.data._id,
+          });
           Cookies.set("token", response.data.token);
           login();
           history.push("/");

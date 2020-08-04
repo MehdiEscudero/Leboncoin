@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../asset/logo.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
-const Header = ({ isLogged, logout }) => {
+const Header = ({ isLogged, logout, setSearch }) => {
   return (
     <div className="header">
       <div className="header-left">
@@ -26,6 +26,7 @@ const Header = ({ isLogged, logout }) => {
           <button className="whitebutton">
             <FontAwesomeIcon icon="search" />
             <input
+              onChange={(e) => setSearch(e.target.value)}
               placeholder="Rechercher"
               style={{ marginLeft: 8, border: "none" }}
             ></input>

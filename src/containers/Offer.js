@@ -26,7 +26,7 @@ const Offer = () => {
   return (
     <>
       {isLoading ? (
-        <p style={{ backgroundColor: "red" }}>En cours de chargement</p>
+        <p>En cours de chargement</p>
       ) : (
         <Wrapper
           style={{ display: "flex", marginTop: 10, justifyContent: "center" }}
